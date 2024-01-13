@@ -1,13 +1,13 @@
 {
   "train": {
     "log_interval": 200,
-    "eval_interval": 10000,
+    "eval_interval": 10,
     "seed": 1234,
     "epochs": 10000,
     "learning_rate": 2e-4,
     "betas": [0.8, 0.99],
     "eps": 1e-9,
-    "batch_size": 64,
+    "batch_size": 2,
     "fp16_run": false,
     "lr_decay": 0.999875,
     "segment_size": 8960,
@@ -15,13 +15,13 @@
     "warmup_epochs": 0,
     "c_mel": 45,
     "c_kl": 1.0,
-    "use_sr": true,
+    "use_sr": false,
     "max_speclen": 128,
     "port": "8001"
   },
   "data": {
-    "training_files":"filelists/train.txt",
-    "validation_files":"filelists/val.txt",
+    "training_files":"filelists/train-ak.txt",
+    "validation_files":"filelists/val-ak.txt",
     "max_wav_value": 32768.0,
     "sampling_rate": 16000,
     "filter_length": 1280,

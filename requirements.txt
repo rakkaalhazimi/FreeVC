@@ -1,9 +1,18 @@
 glob2==0.7
 tqdm==4.62.3
 librosa==0.8.1
-numpy==1.21.6
+numpy>=1.22
+protobuf==3.20.0
 scipy==1.7.2
 tensorboard==2.7.0
-torch==1.10.0
-torchvision==0.9.0
+torch==1.8.0+cu111
+torchvision==0.9.0+cu111
 webrtcvad==2.0.10
+six
+matplotlib
+Pillow==9.5.0
+
+# Resolve error loading caffe2_detectron_ops_gpu.dll 
+# ref: https://github.com/pytorch/pytorch/issues/35803
+intel-openmp  
+# pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html

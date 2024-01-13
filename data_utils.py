@@ -65,13 +65,14 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
             torch.save(spec, spec_filename)
             
         if self.use_spk:
+            # print("User speaker encoder: ", filename)
             spk_filename = filename.replace(".wav", ".npy")
-            spk_filename = spk_filename.replace("DUMMY", "dataset/spk")
+            spk_filename = spk_filename.replace("dataset/arknights-jp-16k", "dataset/spk")
             spk = torch.from_numpy(np.load(spk_filename))
         
         if not self.use_sr:
             c_filename = filename.replace(".wav", ".pt")
-            c_filename = c_filename.replace("DUMMY", "dataset/wavlm")
+            c_filename = c_filename.replace("dataset/arknights-jp-16k", "dataset/wavlm")
             c = torch.load(c_filename).squeeze(0)
         else:
             i = random.randint(68,92)

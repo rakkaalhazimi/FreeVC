@@ -6,10 +6,10 @@ from random import shuffle
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--train_list", type=str, default="./filelists/train.txt", help="path to train list")
-    parser.add_argument("--val_list", type=str, default="./filelists/val.txt", help="path to val list")
-    parser.add_argument("--test_list", type=str, default="./filelists/test.txt", help="path to test list")
-    parser.add_argument("--source_dir", type=str, default="./dataset/vctk-16k", help="path to source dir")
+    parser.add_argument("--train_list", type=str, default="./filelists/train-ak-16k.txt", help="path to train list")
+    parser.add_argument("--val_list", type=str, default="./filelists/val-ak-16k.txt", help="path to val list")
+    parser.add_argument("--test_list", type=str, default="./filelists/test-ak-16k.txt", help="path to test list")
+    parser.add_argument("--source_dir", type=str, default="./dataset/arknights-jp-16k", help="path to source dir")
     args = parser.parse_args()
     
     train = []
