@@ -17,7 +17,7 @@ unzip $MODEL_ZIP_FILENAME -d $MODEL_PATH
 
 
 # Setup Environment and Install Dependencies
-conda create --name $FREEVC_ENV python=3.9
+conda create -y --name $FREEVC_ENV python=3.9
 conda activate $FREEVC_ENV
 pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
 
