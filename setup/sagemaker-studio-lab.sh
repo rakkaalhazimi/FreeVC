@@ -1,8 +1,8 @@
 #!/bin/bash
 # Setup FREEVC for training in Sagemaker Studio Lab Environment
 FREEVC_ENV=free-vc
-DATASET_URL="https://drive.google.com/file/d/1bfByWAngeFzGBFhuqwzW0p80p0DTxK6Z&export=download"
-MODEL_URL="https://drive.google.com/file/d/1ci-qtZYSsJYPAMufH-NIsYUWKdSzHhLe&export=download"
+DATASET_URL="https://drive.google.com/uc?id=1bfByWAngeFzGBFhuqwzW0p80p0DTxK6Z&export=download"
+MODEL_URL="https://drive.google.com/uc?id=1ci-qtZYSsJYPAMufH-NIsYUWKdSzHhLe&export=download"
 DATASET_ZIP_FILENAME=dataset.zip
 MODEL_ZIP_FILENAME=model.zip
 MODEL_PATH=logs/freevc
