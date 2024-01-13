@@ -96,6 +96,8 @@ CUDA_VISIBLE_DEVICES=2 python train.py -c configs/freevc-s.json -m freevc-s
 ## Sagemaker StudioLab Setup for Training
 Prepare your environments, dataset and model inside Sagemaker StudioLab Instance
 ```
+git clone https://github.com/rakkaalhazimi/FreeVC.git $FREEVC_DIR
+cd $FREEVC_DIR
 ./setup/sagemaker-studio-lab.sh
 ```
 

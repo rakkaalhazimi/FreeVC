@@ -1,6 +1,5 @@
 #!/bin/bash
 # Setup FREEVC for training in Sagemaker Studio Lab Environment
-FREEVC_DIR=FreeVC
 FREEVC_ENV=free-vc
 DATASET_URL=https://drive.google.com/file/d/1bfByWAngeFzGBFhuqwzW0p80p0DTxK6Z&export=download
 MODEL_URL=https://drive.google.com/file/d/1ci-qtZYSsJYPAMufH-NIsYUWKdSzHhLe&export=download
@@ -9,9 +8,7 @@ MODEL_ZIP_FILENAME=model.zip
 MODEL_PATH=logs/freevc
 
 
-# Setup Repository, Dataset and Model
-git clone https://github.com/rakkaalhazimi/FreeVC.git $FREEVC_DIR
-cd $FREEVC_DIR
+# Setup Dataset and Model
 wget $DATASET_URL -O $DATASET_ZIP_FILENAME
 wget $MODEL_URL -O $MODEL_ZIP_FILENAME
 mkdir -p $MODEL_PATH
