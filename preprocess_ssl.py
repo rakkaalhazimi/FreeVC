@@ -12,7 +12,7 @@ from wavlm import WavLM, WavLMConfig
 def process(file_path):
     basename = os.path.basename(file_path)
     dirname = os.path.dirname(file_path)
-    speaker = os.path.dirname(dirname)
+    speaker = os.path.basename(dirname)
     
     save_dir = os.path.join(args.out_dir, speaker)
     os.makedirs(save_dir, exist_ok=True)
