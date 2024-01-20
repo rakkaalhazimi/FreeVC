@@ -24,13 +24,18 @@ def build_from_path(in_dir, out_dir, weights_fpath, num_workers=1):
 
 def _compute_spkEmbed(out_dir, wav_path, weights_fpath):
     utt_id = os.path.basename(wav_path).rstrip(".wav")
-    fpath = Path(wav_path)
-    wav = preprocess_wav(fpath)
-
-    encoder = SpeakerEncoder(weights_fpath)
-    embed = encoder.embed_utterance(wav)
     fname_save = os.path.join(out_dir, f"{utt_id}.npy")
-    np.save(fname_save, embed, allow_pickle=False)
+    
+    if os.path.exists(fname_save):
+        pass
+    
+    else:
+        fpath = Path(wav_path)
+        wav = preprocess_wav(fpath)
+
+        encoder = SpeakerEncoder(weights_fpath)
+        embed = encoder.embed_utterance(wav)
+        np.save(fname_save, embed, allow_pickle=False)
     return os.path.basename(fname_save)
 
 def preprocess(in_dir, out_dir_root, spk, weights_fpath, num_workers):
@@ -40,13 +45,10 @@ def preprocess(in_dir, out_dir_root, spk, weights_fpath, num_workers):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--in_dir', type=str, 
-        default='dataset/arknights-jp-16k/')
+    parser.add_argument('--in_dir', type=str, default='dataset/universal-16k/')
     parser.add_argument('--num_workers', type=int, default=1)
-    parser.add_argument('--out_dir_root', type=str, 
-        default='dataset')
-    parser.add_argument('--spk_encoder_ckpt', type=str, \
-        default='speaker_encoder/ckpt/pretrained_bak_5805000.pt')
+    parser.add_argument('--out_dir_root', type=str, default='dataset')
+    parser.add_argument('--spk_encoder_ckpt', type=str, default='speaker_encoder/ckpt/pretrained_bak_5805000.pt')
 
     args = parser.parse_args()
     
